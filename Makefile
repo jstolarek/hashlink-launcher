@@ -1,4 +1,4 @@
-.PHONY: all bindir
+.PHONY: all bindir clean
 
 all: launcher
 
@@ -7,3 +7,6 @@ bindir:
 
 launcher: bindir src/launcher.cs
 	mcs -out:bin/launcher.exe -win32icon:img/haxe.ico -r:System.Windows.Forms -target:winexe src/launcher.cs
+
+clean:
+	rm bin/launcher.exe
