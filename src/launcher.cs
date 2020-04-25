@@ -1,22 +1,27 @@
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 
 class Launcher
 {
-    static int Main(string[] args)
+    static void Main(string[] args)
     {
-        ProcessStartInfo start = new ProcessStartInfo();
-        start.FileName       = Directory.GetCurrentDirectory() + "/bin/hl.exe";
-        start.Arguments      = "hlboot.dat";
-        start.WindowStyle    = ProcessWindowStyle.Hidden;
-        start.CreateNoWindow = true;
+        ProcessStartInfo info = new ProcessStartInfo();
+        info.FileName         = Directory.GetCurrentDirectory() + "/bin/hl.exe";
+        info.Arguments        = "bin/hlboot.dat";
+        info.CreateNoWindow   = true;
+        info.WindowStyle      = ProcessWindowStyle.Hidden;
 
-        int exitCode         = -1;
-        using (Process proc = Process.Start(start))
+        try
         {
-             proc.WaitForExit();
-             exitCode = proc.ExitCode;
+            using (Process proc = Process.Start(info))
+            {
+                 proc.WaitForExit();
+            }
+        } catch (Win32Exception) {
+            MessageBox.Show("Couldn't launch the application", "Error",
+                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        return exitCode;
     }
 }

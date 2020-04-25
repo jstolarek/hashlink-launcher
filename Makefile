@@ -1,9 +1,9 @@
 .PHONY: all bindir
 
-all: bindir launcher
+all: launcher
 
 bindir:
 	mkdir -p bin/
 
-launcher: src/launcher.cs
-	mcs -out:bin/launcher.exe -win32icon:img/haxe.ico src/launcher.cs
+launcher: bindir src/launcher.cs
+	mcs -out:bin/launcher.exe -win32icon:img/haxe.ico -r:System.Windows.Forms -target:winexe src/launcher.cs
