@@ -62,21 +62,13 @@ Put the prepared directory into an archive (ZIP is probably the most accessible
 on Windows) and distribute it to your users.
 
 
-Limitations
-===========
-
-The `exe` file in the [releases](https://github.com/jstolarek/hashlink-launcher/releases)
-section isn't signed.  This means that when a user launches an application they
-will get two (!) warnings from Windows asking whether the application should be
-trusted.  The first warning is about `launcher.exe`, the second one about
-`hl.exe` that is being run by the launcher.
-
-
 Compiling
 =========
 
 Hashlink launcher is written in C#.  Compilation under Linux requires Mono.
-Once you have Mono installed on your system run `make`.
+Once you have Mono installed on your system run `make`.  This will produce
+`launcher.exe` in the `bin/` directory.  Note that a file compiled in this way
+will be unsigned and might result in Windows Defender warnings when launching.
 
 I have no idea how to compile this on Windows :-)
 
