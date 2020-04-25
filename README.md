@@ -1,7 +1,7 @@
 Hashlink launcher
 =================
 
-![img](img/wtfpl_license.png)
+[![img](img/wtfpl_license.png)](LICENSE)
 
 Hashlink launcher helps you to launch applications stored in
 [Hashlink](https://hashlink.haxe.org/) bytecode.  The goal is to avoid the
