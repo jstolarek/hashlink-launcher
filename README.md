@@ -28,8 +28,9 @@ To prepare a distribution package you will need:
 
 Create a distribution directory and place the files in a following layout:
 
-  * place `launcher.exe` inside the directory.  Feel free to rename it to
-    anything that makes more sense your end users, like `game.exe`.
+  * place `launcher.exe` inside the distribution directory.  Feel free to rename
+    `launcher.exe` to anything that makes more sense your end users, like
+    `game.exe`.
 
   * inside the distribution directory create a `bin` subdirectory that contains
     the following files obtained from Hashlink binaries:
@@ -40,7 +41,7 @@ Create a distribution directory and place the files in a following layout:
     - all `.dll` files.  At the moment of this writing these are: `libhl.dll`,
       `msvcr120.dll`, `OpenAL32.dll`, and `SDL2.dll`
 
-  * place you bytecode file `hlboot.dat` inside the `bin` subdirectory.
+  * place your bytecode file `hlboot.dat` inside the `bin` subdirectory.
 
   * if your application requires any sort of assets place those in the `bin/`
     subdirectory.  Of course if the application expects them to be in a
@@ -50,7 +51,7 @@ Create a distribution directory and place the files in a following layout:
 
   * remember to put any documentation and license files into the distribution
     directory.  These can go at the top-level or in a dedicated directory -
-    these don't need to be in `bin/`.
+    documentation does not need to be in `bin/`.
 
 Therefore, the distribution directory should contain at least the following
 files:
@@ -65,7 +66,6 @@ Limitations
 ===========
 
 The `exe` file in the [releases](https://github.com/jstolarek/hashlink-launcher/releases)
-
 section isn't signed.  This means that when a user launches an application they
 will get two (!) warnings from Windows asking whether the application should be
 trusted.  The first warning is about `launcher.exe`, the second one about
@@ -92,4 +92,5 @@ needed a way to execute `hl.exe hlboot.dat` to actually launch the game.  At
 first I went with the simplest option and created a simple `.bat` file launcher
 but I noticed that people were getting confused (weird unknown extension, no
 icon).  So I created this trivial application instead.  Thanks to it I can
-create a Windows distribution package without having to deal with Windows.
+create a lightweight Windows distribution package without having to actually
+deal with Windows.
