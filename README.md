@@ -5,8 +5,8 @@ Hashlink launcher
 
 Hashlink launcher helps you to launch applications stored in
 [Hashlink](https://hashlink.haxe.org/) bytecode.  The goal is to avoid the
-hassle of native compilation (via C) and at the same time allow to provide your
-end users with an application they can launch with an `.exe` file.
+hassle of native compilation of Haxe via C, and at the same time allow to
+provide your end users with an application they can launch with an `.exe` file.
 
 Since Hashlink bytecode is portable you can compile your bytecode and prepare a
 distribution archive on a non-Windows platform.
