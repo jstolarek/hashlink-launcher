@@ -61,6 +61,26 @@ Put the prepared directory into an archive (ZIP is probably the most accessible
 on Windows) and distribute it to your users.
 
 
+Limitations
+===========
+
+The `exe` file in the [releases](https://github.com/jstolarek/hashlink-launcher/releases)
+
+section isn't signed.  This means that when a user launches an application they
+will get two (!) warnings from Windows asking whether the application should be
+trusted.  The first warning is about `launcher.exe`, the second one about
+`hl.exe` that is being run by the launcher.
+
+
+Compiling
+=========
+
+Hashlink launcher is written in C#.  Compilation under Linux requires Mono.
+Once you have Mono installed on your system run `make`.
+
+I have no idea how to compile this on Windows :-)
+
+
 Motivation
 ==========
 
@@ -68,9 +88,8 @@ I use Haxe and the [heaps.io](https://heaps.io/) engine to create games during
 game jams.  Linux is my platform of choice and, although Haxe is fully portable,
 creating a distribution package for Windows users turned out to be a bit of a
 problem.  Putting all the required files together is not an issue, but I still
-need a way to execute `hl.exe hlboot.dat` to actually launch the game.  At first
-I went with the simplest option and created a simple `.bat` file launcher but I
-noticed that people were getting confused.  I guess many users these days don't
-know what batch files are and are suspicious of them (can't blame them).  So I
-created this trivial application instead.  Thanks to it I can create a Windows
-distribution package without having to deal with Windows.
+needed a way to execute `hl.exe hlboot.dat` to actually launch the game.  At
+first I went with the simplest option and created a simple `.bat` file launcher
+but I noticed that people were getting confused (weird unknown extension, no
+icon).  So I created this trivial application instead.  Thanks to it I can
+create a Windows distribution package without having to deal with Windows.
